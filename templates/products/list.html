@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    list
+{% endblock %}
+{% block content %}
+    <h3>Product list</h3>
+    {% if request.user.is_authenticated %}
+        <small>You are authenticated</small>
+    {% endif %}
+    {% for product in products %}
+        <div>
+            <h3><a href="{% url 'products:detail' id=product.id %}">{{ product.title }}</a> </h3>
+            
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Base |
+       {% block title %} {% endblock %}
+
+    </title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a href="{% url 'products:list' %}">home</a></li>
+            <li><a href="{% url 'accounts:login' %}">login</a></li>
+            <li><a href="{% url 'accounts:register' %}">register</a></li>
+            <li><a href="{% url 'accounts:logout' %}">logout</a></li>
+        </ul>
+    </div>
+    <div>
+        {% block content %}
+            <p>show something</p>
+        {% endblock %}
+    </div>
+    
+</body>
+</html>
